@@ -12,49 +12,44 @@ namespace Klase
         private Administrator _admin;
         private bool _jeDozvoljeno;
 
-        private string _stanje;
-
-        public static string POSLAT = "POSLAT";
-        public static string DOBIJEN = "DOBIJEN";
-        public static string PRIHVACEN = "PRIHVACEN";
-        public static string NEPRIHVACEN = "NEPRIHVACEN";
+        private StanjaPristupa _stanje;
 
         public DozvolaPristupa(Korisnik korisnik, Sistem sistem)
         {
             this._korisnik = korisnik;
             this._sistem = sistem;
-            _stanje = POSLAT;
+            _stanje = StanjaPristupa.POSLAT;
             _jeDozvoljeno = false;
             obavestiAdminaOZahtevu();
         }
 
         public void zahtevDobijen(Administrator admin)
         {
-            if (_stanje != POSLAT)
+            if (_stanje != StanjaPristupa.POSLAT)
                 return;
             biceOdlucenoOd(admin);
-            _stanje = DOBIJEN;
+            _stanje = StanjaPristupa.DOBIJEN;
         }
 
 
         public void zahtevNijePrihvacen(Administrator admin)
         {
-            if (_stanje != DOBIJEN)
+            if (_stanje != StanjaPristupa.DOBIJEN)
                 return;
             if (_admin != admin)
                 return;
-            _stanje = NEPRIHVACEN;
+            _stanje = StanjaPristupa.NEPRIHVACEN;
             _jeDozvoljeno = false;
             obavestiKorisnikaORezultatuZahteva();
         }
 
         public void zahtevPrihvacen(Administrator admin)
         {
-            if (_stanje != DOBIJEN)
+            if (_stanje != StanjaPristupa.DOBIJEN)
                 return;
             if (_admin != admin)
                 return;
-            _stanje = PRIHVACEN;
+            _stanje = StanjaPristupa.PRIHVACEN;
             _jeDozvoljeno = true;
             obavestiKorisnikaORezultatuZahteva();
         }
