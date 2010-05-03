@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main.csproj", "{E269551E-04DE-4D9D-96C3-C607CDA0DE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klase", "Klase\Klase.csproj", "{6616A0FA-AA27-4C8F-940C-A9D7DFF01C77}"
+EndProject
+Global
+	GlobalSection(MercurialSourceControlSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E269551E-04DE-4D9D-96C3-C607CDA0DE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E269551E-04DE-4D9D-96C3-C607CDA0DE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E269551E-04DE-4D9D-96C3-C607CDA0DE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E269551E-04DE-4D9D-96C3-C607CDA0DE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6616A0FA-AA27-4C8F-940C-A9D7DFF01C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6616A0FA-AA27-4C8F-940C-A9D7DFF01C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6616A0FA-AA27-4C8F-940C-A9D7DFF01C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6616A0FA-AA27-4C8F-940C-A9D7DFF01C77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
