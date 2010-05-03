@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Klase
 {
-    public class StanjaPristupa
+    public abstract class StanjaPristupa
     {
         private string _stanje;
         
@@ -14,10 +14,9 @@ namespace Klase
             this._stanje = stanje;
         }
 
-        public static StanjaPristupa POSLAT = new StanjaPristupa("POSLAT");
-        public static StanjaPristupa DOBIJEN = new StanjaPristupa("DOBIJEN");
-        public static StanjaPristupa PRIHVACEN = new StanjaPristupa("PRIHVACEN");
-        public static StanjaPristupa NEPRIHVACEN = new StanjaPristupa("NEPRIHVACEN");
-        public void aaaa() { }
+        public static StanjaPristupa POSLAT = new SPPoslat();
+        public static StanjaPristupa DOBIJEN = new SPDobijen();
+        public static StanjaPristupa PRIHVACEN = new SPPrihvacen();
+        public static StanjaPristupa NEPRIHVACEN = new SPNeprihvacen();
     }
 }
