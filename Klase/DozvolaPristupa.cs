@@ -14,6 +14,23 @@ namespace Klase
 
         private StanjaPristupa _stanje;
 
+        public StanjaPristupa Stanje
+        {
+            get { return _stanje; }
+            set { _stanje = value; }
+        }
+        
+        public Administrator Admin
+        {
+            get { return _admin; }
+            set { _admin = value; }
+        }
+        public bool JeDozvoljeno
+        {
+            get { return _jeDozvoljeno; }
+            set { _jeDozvoljeno = value; }
+        }
+
         public DozvolaPristupa(Korisnik korisnik, Sistem sistem)
         {
             this._korisnik = korisnik;
@@ -25,33 +42,18 @@ namespace Klase
 
         public void zahtevDobijen(Administrator admin)
         {
-            if (_stanje != StanjaPristupa.POSLAT)
-                return;
-            biceOdlucenoOd(admin);
-            _stanje = StanjaPristupa.DOBIJEN;
+            _stanje.zahtevDobijen(admin,this);
         }
 
 
         public void zahtevNijePrihvacen(Administrator admin)
         {
-            if (_stanje != StanjaPristupa.DOBIJEN)
-                return;
-            if (_admin != admin)
-                return;
-            _stanje = StanjaPristupa.NEPRIHVACEN;
-            _jeDozvoljeno = false;
-            obavestiKorisnikaORezultatuZahteva();
+            _stanje.zahtevNijePrihvacen(admin, this);
         }
 
         public void zahtevPrihvacen(Administrator admin)
         {
-            if (_stanje != StanjaPristupa.DOBIJEN)
-                return;
-            if (_admin != admin)
-                return;
-            _stanje = StanjaPristupa.PRIHVACEN;
-            _jeDozvoljeno = true;
-            obavestiKorisnikaORezultatuZahteva();
+            _stanje.zahtevPrihvacen(admin,this);
         }
         public void biceOdlucenoOd(Administrator admin)
         {
