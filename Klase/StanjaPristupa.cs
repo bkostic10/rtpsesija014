@@ -19,16 +19,16 @@ namespace Klase
         public static StanjaPristupa PRIHVACEN = new SPPrihvacen();
         public static StanjaPristupa NEPRIHVACEN = new SPNeprihvacen();
         
-        public void zahtevDobijen(Administrator admin, DozvolaPristupa dozvola)
+        public virtual void zahtevDobijen(Administrator admin, DozvolaPristupa dozvola)
         {
             if (dozvola.Stanje != POSLAT)
                 return;
             dozvola.biceOdlucenoOd(admin);
-            dozvola.Stanje = StanjaPristupa.DOBIJEN;
+            dozvola.Stanje = DOBIJEN;
         }
 
 
-        public void zahtevNijePrihvacen(Administrator admin, DozvolaPristupa dozvola)
+        public virtual void zahtevNijePrihvacen(Administrator admin, DozvolaPristupa dozvola)
         {
             if (dozvola.Stanje != DOBIJEN)
                 return;
@@ -39,7 +39,7 @@ namespace Klase
             dozvola.obavestiKorisnikaORezultatuZahteva();
         }
 
-        public void zahtevPrihvacen(Administrator admin, DozvolaPristupa dozvola)
+        public virtual void zahtevPrihvacen(Administrator admin, DozvolaPristupa dozvola)
         {
             if (dozvola.Stanje != DOBIJEN)
                 return;
